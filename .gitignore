@@ -1,0 +1,10 @@
+PigTail/.vs/
+PigTail/Debug/*
+PigTail/PigTail/*
+PigTail/Release/*
+PigTail/PigTail.sln
+
+!PigTail/PigTail/main.cpp
+!PigTail/Debug/PigTail.exe
+!PigTail/Release/PigTail.exe
+

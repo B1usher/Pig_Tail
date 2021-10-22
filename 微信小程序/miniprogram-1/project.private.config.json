@@ -1,0 +1,42 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/bendi/bendi",
+          "pathName": "pages/bendi/bendi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null,
+          "partialCompile": {
+            "enabled": false,
+            "pages": [
+              "pages/renji/renji"
+            ]
+          }
+        },
+        {
+          "name": "pages/renji/renji",
+          "pathName": "pages/renji/renji",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

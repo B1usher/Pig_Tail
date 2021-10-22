@@ -1,0 +1,18 @@
+.conti{background-color: rgb(249, 249, 249);}
+.header{width: 100%;height:10%;border: 1px solid #aaa;border-radius: 15rpx;}
+.hd{display:flex;justify-content:center;align-items: center;}
+.hd .logo{height: 157rpx;width: 180rpx;}
+
+.hd image{height: 100%;}
+
+.txt{font-size: 20rpx;display: inline;margin: 10rpx 85rpx;}
+
+.turn{position: relative;text-align: center;color:rgb(43, 66, 197)}
+.major .pic{width: 100rpx;height: 80rpx;position: relative;}
+.major{white-space: nowrap;margin: 0rpx 15rpx;}
+.major .box{text-align: center;width: 160rpx;display:inline-flex;border: 1px solid #aaa;margin:auto 10rpx;border-radius: 10rpx;position: relative;}
+
+
+.card .bei{width: 243rpx;height: 342rpx;}
+.card{white-space: nowrap;}
+.card .pai{display:inline-block;margin:25rpx 10rpx;text-align: center;}

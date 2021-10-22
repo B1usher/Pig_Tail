@@ -1,0 +1,14 @@
+<view class="container">
+  <image class="tongyong" src="/tupian/beijing.png"></image> 
+  <image class="shouye" src="/tupian/shouye.png"></image> 
+
+    <view class="box1">
+      <navigator url="/pages/bendi/bendi" open-type="reLaunch">本地游戏</navigator>
+    </view>
+    <view class="box2"> 
+      <navigator url="/pages/renji/renji" open-type="reLaunch">人机对战</navigator>
+    </view>
+    <view class="box3">
+      <navigator url="/pages/denglu/denglu" open-type="reLaunch">在线决斗</navigator>
+    </view>
+</view>

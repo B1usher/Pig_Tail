@@ -1,0 +1,78 @@
+.container{
+  margin:0rpx;
+  padding: 0rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.tongyong{
+  position: absolute;width: 100%;height: 100%;
+}
+.shouye{
+  position: absolute;height: 30%;width: 60%;
+  z-index: 2;margin: 40%;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#ffe;
+  position: absolute;
+  background-color: rgb(9, 133, 235);
+  z-index: 1;
+  margin:20% auto;
+  width: 40%;
+  height: 8%;
+  border-radius: 15rpx;
+  font-size: larger;
+  justify-content:center
+}
+.box1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#ffe;
+  position: absolute;
+  background-color: rgb(9, 133, 235);
+  z-index: 1;
+  margin:95% auto;
+  width: 40%;
+  height: 8%;
+  border-radius: 15rpx;
+  font-size: larger;
+  justify-content:center
+}
+.box2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#ffe;
+  position: absolute;
+  background-color: rgb(9, 133, 235);
+  z-index: 1;
+  margin:115%;
+  width: 40%;
+  height: 8%;
+  border-radius: 15rpx;
+  font-size: larger;
+  justify-content:center
+}
+.box3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#ffe;
+  position: absolute;
+  background-color: rgb(9, 133, 235);
+  z-index: 1;
+  margin:135% auto;
+  width: 40%;
+  height: 8%;
+  border-radius: 15rpx;
+  font-size:larger;
+  align-items: center;
+  justify-content:center
+}

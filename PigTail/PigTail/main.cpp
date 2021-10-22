@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<stack>
 #include<time.h>
 #include<stdlib.h>
@@ -6,20 +6,20 @@
 #include<Windows.h>
 using namespace std;
 
-void Menu();	//Ö÷²Ëµ¥ÉùÃ÷
+void Menu();	//ä¸»èœå•å£°æ˜
 
-class PaiDui	//ÅÆ¶ÑÀà
+class PaiDui	//ç‰Œå †ç±»
 {
 public:
-	int poker[52] = { 0 };	//ÅÆ¶ÑÅÆĞò 0:ÎŞÅÆ£»1~13£ººÚÌÒA~K£»14~26£ººìÌÒA~K£»27~39£ºÃ·»¨A~K£»40~52£º·½Æ¬A~K
-	int top = 0;			//ÅÆ¶¥µ±Ç°Î»ÖÃ
-	int heitao = 13;		//¸÷»¨É«ÊıÁ¿
+	int poker[52] = { 0 };	//ç‰Œå †ç‰Œåº 0:æ— ç‰Œï¼›1~13ï¼šé»‘æ¡ƒA~Kï¼›14~26ï¼šçº¢æ¡ƒA~Kï¼›27~39ï¼šæ¢…èŠ±A~Kï¼›40~52ï¼šæ–¹ç‰‡A~K
+	int top = 0;			//ç‰Œé¡¶å½“å‰ä½ç½®
+	int heitao = 13;		//å„èŠ±è‰²æ•°é‡
 	int hongtao = 13;
 	int meihua = 13;
 	int fangpian = 13;
-	void create();			//´´½¨Ëæ»úÅÆ¶Ñ
+	void create();			//åˆ›å»ºéšæœºç‰Œå †
 };
-void PaiDui::create()	//´´½¨Ëæ»úÅÆ¶Ñ
+void PaiDui::create()	//åˆ›å»ºéšæœºç‰Œå †
 {
 	srand((unsigned int)time(NULL));
 	for (int i = 0; i < 52; i++)
@@ -33,31 +33,31 @@ void PaiDui::create()	//´´½¨Ëæ»úÅÆ¶Ñ
 	}
 }
 
-class FangZhiQU	//·ÅÖÃÇøÀà
+class FangZhiQU	//æ”¾ç½®åŒºç±»
 {
 public:
 	stack<int> card;
-	stack<int> decor;	//»¨É«  1: ºÚÌÒ  2£ººìÌÒ  3£ºÃ·»¨  4£º·½Æ¬
+	stack<int> decor;	//èŠ±è‰²  1: é»‘æ¡ƒ  2ï¼šçº¢æ¡ƒ  3ï¼šæ¢…èŠ±  4ï¼šæ–¹ç‰‡
 };
 
-class WanJia	//Íæ¼ÒÀà
+class WanJia	//ç©å®¶ç±»
 {
 public:
-	stack<int> heitao;		//ºÚÌÒ
-	stack<int> hongtao;		//ºìÌÒ
-	stack<int> meihua;		//Ã·»¨
-	stack<int> fangpian;	//·½Æ¬
-	int total()				//ÊÖÅÆ×ÜÊı
+	stack<int> heitao;		//é»‘æ¡ƒ
+	stack<int> hongtao;		//çº¢æ¡ƒ
+	stack<int> meihua;		//æ¢…èŠ±
+	stack<int> fangpian;	//æ–¹ç‰‡
+	int total()				//æ‰‹ç‰Œæ€»æ•°
 	{
 		return heitao.size() + hongtao.size() + meihua.size() + fangpian.size();
 	}
 };
-int result[2] = { 0 };	//Ai²âÊÔ³É¼¨
-int rule_1 = 0;			//Ai_1²ßÂÔ
-int rule_2 = 0;			//Ai_2²ßÂÔ
-int changci = 0;		//Ai²âÊÔ³¡Êı
+int result[2] = { 0 };	//Aiæµ‹è¯•æˆç»©
+int rule_1 = 0;			//Ai_1ç­–ç•¥
+int rule_2 = 0;			//Ai_2ç­–ç•¥
+int changci = 0;		//Aiæµ‹è¯•åœºæ•°
 
-int Decor(int num)	//Êı×Ö×ª¾ßÌå»¨É«  ·µ»Ø1: ºÚÌÒ  2£ººìÌÒ  3£ºÃ·»¨  4£º·½Æ¬
+int Decor(int num)	//æ•°å­—è½¬å…·ä½“èŠ±è‰²  è¿”å›1: é»‘æ¡ƒ  2ï¼šçº¢æ¡ƒ  3ï¼šæ¢…èŠ±  4ï¼šæ–¹ç‰‡
 {
 	if (1 <= num && num <= 13)
 		return 1;
@@ -68,19 +68,19 @@ int Decor(int num)	//Êı×Ö×ª¾ßÌå»¨É«  ·µ»Ø1: ºÚÌÒ  2£ººìÌÒ  3£ºÃ·»¨  4£º·½Æ¬
 	else
 		return 4;
 }
-string Change(int num)	//Êı×Ö×ª¾ßÌåÅÆĞÍ
+string Change(int num)	//æ•°å­—è½¬å…·ä½“ç‰Œå‹
 {
 	string s1;
 	string s2;
 	int decor = Decor(num);
 	if (decor == 1)
-		s1 = "ºÚÌÒ";
+		s1 = "é»‘æ¡ƒ";
 	else if (decor == 2)
-		s1 = "ºìÌÒ";
+		s1 = "çº¢æ¡ƒ";
 	else if (decor == 3)
-		s1 = "Ã·»¨";
+		s1 = "æ¢…èŠ±";
 	else
-		s1 = "·½Æ¬";
+		s1 = "æ–¹ç‰‡";
 
 	int num_2 = num % 13;
 	switch (num_2)
@@ -130,14 +130,14 @@ string Change(int num)	//Êı×Ö×ª¾ßÌåÅÆĞÍ
 }
 
 
-void Update_1(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//µÃ·Ö¸üĞÂ²ßÂÔ1: °´ÅÆ¶ÑÊ£ÓàÅÆÊıÁ¿,
+void Update_1(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//å¾—åˆ†æ›´æ–°ç­–ç•¥1: æŒ‰ç‰Œå †å‰©ä½™ç‰Œæ•°é‡,
 {
-	int amount[4] = { paidui.heitao, paidui.hongtao, paidui.meihua, paidui.fangpian };				//ÅÆ¶Ñ¸÷»¨É«ÅÆÊıÁ¿
-	int shoupai[4] = { me.heitao.size(), me.hongtao.size(), me.meihua.size(), me.fangpian.size() };	//ÊÖÅÆ¸÷»¨É«ÅÆÊıÁ¿
+	int amount[4] = { paidui.heitao, paidui.hongtao, paidui.meihua, paidui.fangpian };				//ç‰Œå †å„èŠ±è‰²ç‰Œæ•°é‡
+	int shoupai[4] = { me.heitao.size(), me.hongtao.size(), me.meihua.size(), me.fangpian.size() };	//æ‰‹ç‰Œå„èŠ±è‰²ç‰Œæ•°é‡
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (shoupai[i] != 0)	//+4~1·Ö
+		if (shoupai[i] != 0)	//+4~1åˆ†
 		{
 			for (int j = 0; j < 4; j++)
 			{
@@ -147,14 +147,14 @@ void Update_1(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int
 		}
 	}
 }
-void Update_2(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//µÃ·Ö¸üĞÂ²ßÂÔ2: °´¶ÔÊÖÊÖÅÆÊıÁ¿ÅÅ
+void Update_2(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//å¾—åˆ†æ›´æ–°ç­–ç•¥2: æŒ‰å¯¹æ‰‹æ‰‹ç‰Œæ•°é‡æ’
 {
-	int amount[4] = { you.heitao.size(), you.hongtao.size(), you.meihua.size(), you.fangpian.size() };	//¶ÔÊÖ¸÷»¨É«ÅÆÊıÁ¿
-	int shoupai[4] = { me.heitao.size(), me.hongtao.size(), me.meihua.size(), me.fangpian.size() };		//ÊÖÅÆ¸÷»¨É«ÅÆÊıÁ¿
+	int amount[4] = { you.heitao.size(), you.hongtao.size(), you.meihua.size(), you.fangpian.size() };	//å¯¹æ‰‹å„èŠ±è‰²ç‰Œæ•°é‡
+	int shoupai[4] = { me.heitao.size(), me.hongtao.size(), me.meihua.size(), me.fangpian.size() };		//æ‰‹ç‰Œå„èŠ±è‰²ç‰Œæ•°é‡
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (shoupai[i] != 0)	//+8~5·Ö
+		if (shoupai[i] != 0)	//+8~5åˆ†
 		{
 			for (int j = 0; j < 4; j++)
 			{
@@ -165,9 +165,9 @@ void Update_2(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int
 		}
 	}
 }
-void Update_3(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//µÃ·Ö¸üĞÂ²ßÂÔ3: °´Óë·ÅÖÃÇø¹ØÏµ
+void Update_3(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int* score)	//å¾—åˆ†æ›´æ–°ç­–ç•¥3: æŒ‰ä¸æ”¾ç½®åŒºå…³ç³»
 {
-	if (!fangzhiqu.decor.empty())		//·Ç¿Õ²ÅÅĞ¶Ï
+	if (!fangzhiqu.decor.empty())		//éç©ºæ‰åˆ¤æ–­
 	{
 		if (fangzhiqu.decor.top() == 1)
 		{
@@ -196,11 +196,11 @@ void Update_3(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int
 	}
 }
 
-int Ai(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int rule)		//Ai²Ù×÷Ñ¡Ôñ  rule±íÊ¾Ê¹ÓÃÊ²Ã´²ßÂÔ  0£ºËùÓĞ£» 1£ºÅÆ¶ÑÊıÁ¿£» 2£º¶ÔÊÖÊÖÅÆÊıÁ¿£» 3£º·ÅÖÃÇø¶¥ÅÆ 
+int Ai(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int rule)		//Aiæ“ä½œé€‰æ‹©  ruleè¡¨ç¤ºä½¿ç”¨ä»€ä¹ˆç­–ç•¥  0ï¼šæ‰€æœ‰ï¼› 1ï¼šç‰Œå †æ•°é‡ï¼› 2ï¼šå¯¹æ‰‹æ‰‹ç‰Œæ•°é‡ï¼› 3ï¼šæ”¾ç½®åŒºé¡¶ç‰Œ 
 {
-	int score[5] = { 0 };	//5ÖÖ²Ù×÷µÄµÃ·Ö 0£º´ÓÅÆ¶ÑÖĞ³éÈ¡  1: ´ò³öºÚÌÒ  2£º´ò³öºìÌÒ  3£º´ò³öÃ·»¨  4£º´ò³ö·½Æ¬
+	int score[5] = { 0 };	//5ç§æ“ä½œçš„å¾—åˆ† 0ï¼šä»ç‰Œå †ä¸­æŠ½å–  1: æ‰“å‡ºé»‘æ¡ƒ  2ï¼šæ‰“å‡ºçº¢æ¡ƒ  3ï¼šæ‰“å‡ºæ¢…èŠ±  4ï¼šæ‰“å‡ºæ–¹ç‰‡
 
-	//¼ÆËã·ÖÊı
+	//è®¡ç®—åˆ†æ•°
 	if (rule == 0)
 	{
 		Update_1(me, you, fangzhiqu, paidui, score);
@@ -214,7 +214,7 @@ int Ai(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int rule)	
 	else if (rule == 3)
 		Update_3(me, you, fangzhiqu, paidui, score);
 
-	//Ñ¡Ôñ²Ù×÷
+	//é€‰æ‹©æ“ä½œ
 	int max = score[0];
 	int operation = 0;
 	for (int i = 0; i < 5; i++)
@@ -228,34 +228,34 @@ int Ai(WanJia& me, WanJia& you, FangZhiQU& fangzhiqu, PaiDui& paidui, int rule)	
 
 	return operation;
 }
-int Person(WanJia& _1P, WanJia& _2P, FangZhiQU& fangzhiqu, PaiDui& paidui, int i)	//ÕæÈË²Ù×÷Ñ¡Ôñ
+int Person(WanJia& _1P, WanJia& _2P, FangZhiQU& fangzhiqu, PaiDui& paidui, int i)	//çœŸäººæ“ä½œé€‰æ‹©
 {
 	int operation = 0;
 
-	//Ïà¹ØĞÅÏ¢ÌáÊ¾
+	//ç›¸å…³ä¿¡æ¯æç¤º
 	cout << endl << endl;
 	cout << "-----------------------------------------------------------------------" << endl;
-	cout << " 2 P µÄÊÖÅÆÓĞ     ºÚÌÒ: " << _2P.heitao.size() << " ÕÅ  ºìÌÒ: " << _2P.hongtao.size() << " ÕÅ  Ã·»¨: " << _2P.meihua.size() << " ÕÅ  ·½Æ¬: " << _2P.fangpian.size() << " ÕÅ" << endl << endl;
-	cout << "ÅÆ¶ÑÓĞ           ºÚÌÒ: " << paidui.heitao << " ÕÅ  ºìÌÒ: " << paidui.hongtao << " ÕÅ  Ã·»¨: " << paidui.meihua << " ÕÅ  ·½Æ¬: " << paidui.fangpian << " ÕÅ" << endl;
-	cout << "·ÅÖÃÇøÓĞ          ¹² " << fangzhiqu.card.size() << " ÕÅ ÅÆ";
+	cout << " 2 P çš„æ‰‹ç‰Œæœ‰     é»‘æ¡ƒ: " << _2P.heitao.size() << " å¼   çº¢æ¡ƒ: " << _2P.hongtao.size() << " å¼   æ¢…èŠ±: " << _2P.meihua.size() << " å¼   æ–¹ç‰‡: " << _2P.fangpian.size() << " å¼ " << endl << endl;
+	cout << "ç‰Œå †æœ‰           é»‘æ¡ƒ: " << paidui.heitao << " å¼   çº¢æ¡ƒ: " << paidui.hongtao << " å¼   æ¢…èŠ±: " << paidui.meihua << " å¼   æ–¹ç‰‡: " << paidui.fangpian << " å¼ " << endl;
+	cout << "æ”¾ç½®åŒºæœ‰          å…± " << fangzhiqu.card.size() << " å¼  ç‰Œ";
 	if (!fangzhiqu.card.empty())
-		cout << "     ÆäÖĞÅÆ¶¥µÄÅÆÊÇ  " << Change(fangzhiqu.card.top()) << endl << endl;
+		cout << "     å…¶ä¸­ç‰Œé¡¶çš„ç‰Œæ˜¯  " << Change(fangzhiqu.card.top()) << endl << endl;
 	else
 		cout << endl << endl;
-	cout << " 1 P µÄÊÖÅÆÓĞ     ºÚÌÒ: " << _1P.heitao.size() << " ÕÅ  ºìÌÒ: " << _1P.hongtao.size() << " ÕÅ  Ã·»¨: " << _1P.meihua.size() << " ÕÅ  ·½Æ¬: " << _1P.fangpian.size() << " ÕÅ" << endl;
+	cout << " 1 P çš„æ‰‹ç‰Œæœ‰     é»‘æ¡ƒ: " << _1P.heitao.size() << " å¼   çº¢æ¡ƒ: " << _1P.hongtao.size() << " å¼   æ¢…èŠ±: " << _1P.meihua.size() << " å¼   æ–¹ç‰‡: " << _1P.fangpian.size() << " å¼ " << endl;
 	cout << "-----------------------------------------------------------------------" << endl << endl;
 
-	//²Ù×÷ÊäÈëÌáÊ¾ĞÅÏ¢
-	cout << "²Ù×÷Ñ¡Ôñ£º" << endl;
-	cout << "     0£º´ÓÅÆ¶ÑÖĞ³éÈ¡     1: ´ò³öºÚÌÒ     2£º´ò³öºìÌÒ     3£º´ò³öÃ·»¨     4£º´ò³ö·½Æ¬" << endl;
-	cout << "     ÇëÊäÈë " << i << " P µÄ²Ù×÷ >>> ";
+	//æ“ä½œè¾“å…¥æç¤ºä¿¡æ¯
+	cout << "æ“ä½œé€‰æ‹©ï¼š" << endl;
+	cout << "     0ï¼šä»ç‰Œå †ä¸­æŠ½å–     1: æ‰“å‡ºé»‘æ¡ƒ     2ï¼šæ‰“å‡ºçº¢æ¡ƒ     3ï¼šæ‰“å‡ºæ¢…èŠ±     4ï¼šæ‰“å‡ºæ–¹ç‰‡" << endl;
+	cout << "     è¯·è¾“å…¥ " << i << " P çš„æ“ä½œ >>> ";
 
-	for (;;)	//²Ù×÷ÊäÈë
+	for (;;)	//æ“ä½œè¾“å…¥
 	{
 		cin >> operation;
 		while (operation != 0 && operation != 1 && operation != 2 && operation != 3 && operation != 4)
 		{
-			cout << "     ÇëÊäÈëÊı×Ö 0 ~ 4 >>> ";
+			cout << "     è¯·è¾“å…¥æ•°å­— 0 ~ 4 >>> ";
 			cin >> operation;
 		}
 		if (operation == 0)
@@ -263,28 +263,28 @@ int Person(WanJia& _1P, WanJia& _2P, FangZhiQU& fangzhiqu, PaiDui& paidui, int i
 		else if (operation == 1)
 		{
 			if ((i == 1 && _1P.heitao.empty()) || (i == 2 && _2P.heitao.empty()))
-				cout << "     ÄãÃ»ÓĞºÚÌÒÅÆ£¬ÇëÖØĞÂÊäÈë >>> ";
+				cout << "     ä½ æ²¡æœ‰é»‘æ¡ƒç‰Œï¼Œè¯·é‡æ–°è¾“å…¥ >>> ";
 			else
 				break;
 		}
 		else if (operation == 2)
 		{
 			if ((i == 1 && _1P.hongtao.empty()) || (i == 2 && _2P.hongtao.empty()))
-				cout << "     ÄãÃ»ÓĞºìÌÒÅÆ£¬ÇëÖØĞÂÊäÈë >>> ";
+				cout << "     ä½ æ²¡æœ‰çº¢æ¡ƒç‰Œï¼Œè¯·é‡æ–°è¾“å…¥ >>> ";
 			else
 				break;
 		}
 		else if (operation == 3)
 		{
 			if ((i == 1 && _1P.meihua.empty()) || (i == 2 && _2P.meihua.empty()))
-				cout << "     ÄãÃ»ÓĞÃ·»¨ÅÆ£¬ÇëÖØĞÂÊäÈë >>> ";
+				cout << "     ä½ æ²¡æœ‰æ¢…èŠ±ç‰Œï¼Œè¯·é‡æ–°è¾“å…¥ >>> ";
 			else
 				break;
 		}
 		else
 		{
 			if ((i == 1 && _1P.fangpian.empty()) || (i == 2 && _2P.fangpian.empty()))
-				cout << "     ÄãÃ»ÓĞ·½Æ¬ÅÆ£¬ÇëÖØĞÂÊäÈë >>> ";
+				cout << "     ä½ æ²¡æœ‰æ–¹ç‰‡ç‰Œï¼Œè¯·é‡æ–°è¾“å…¥ >>> ";
 			else
 				break;
 		}
@@ -293,36 +293,36 @@ int Person(WanJia& _1P, WanJia& _2P, FangZhiQU& fangzhiqu, PaiDui& paidui, int i
 	return operation;
 }
 
-void Judge(int num, int decor_1, WanJia& P, FangZhiQU& fangzhiqu, int mod, int i)	//·ÅÖÃÇøÅÆÊÇ·ñÊÕ»ØÅĞ¶Ï
+void Judge(int num, int decor_1, WanJia& P, FangZhiQU& fangzhiqu, int mod, int i)	//æ”¾ç½®åŒºç‰Œæ˜¯å¦æ”¶å›åˆ¤æ–­
 {
-	int decor_2 = fangzhiqu.decor.top();	//Ô­·ÅÖÃÇø¶¥»¨É«
+	int decor_2 = fangzhiqu.decor.top();	//åŸæ”¾ç½®åŒºé¡¶èŠ±è‰²
 	int poker = 0;
 	int decor = 0;
 
-	//ÏÈ·ÅÅÆ
+	//å…ˆæ”¾ç‰Œ
 	fangzhiqu.card.push(num);
 	fangzhiqu.decor.push(decor_1);
 
-	//ÊÕÅÆÅĞ¶Ï
-	if (decor_1 == decor_2)		//ÓëÔ­·ÅÖÃÇø¶¥»¨É«ÏàÍ¬
+	//æ”¶ç‰Œåˆ¤æ–­
+	if (decor_1 == decor_2)		//ä¸åŸæ”¾ç½®åŒºé¡¶èŠ±è‰²ç›¸åŒ
 	{
-		//ÌáÊ¾
+		//æç¤º
 		if (mod != 3)
 		{
-			cout << "     " << i << " P ÓÉÓÚÒ»ÕÅ " << Change(fangzhiqu.card.top()) << " ÊÕÆğÁËÕû¸ö·ÅÖÃÇøµÄÅÆ" << endl;
+			cout << "     " << i << " P ç”±äºä¸€å¼  " << Change(fangzhiqu.card.top()) << " æ”¶èµ·äº†æ•´ä¸ªæ”¾ç½®åŒºçš„ç‰Œ" << endl;
 			cout << "---------------------------------------------" << endl << endl;
 		}
 
-		//ÊÕÅÆ
+		//æ”¶ç‰Œ
 		while (!fangzhiqu.card.empty())
 		{
-			//·ÅÖÃÇøµ¯³öÅÆ
+			//æ”¾ç½®åŒºå¼¹å‡ºç‰Œ
 			poker = fangzhiqu.card.top();
 			fangzhiqu.card.pop();
 			decor = fangzhiqu.decor.top();
 			fangzhiqu.decor.pop();
 
-			//ÊÖÅÆÑ¹ÈëÅÆ
+			//æ‰‹ç‰Œå‹å…¥ç‰Œ
 			if (decor == 1)
 				P.heitao.push(poker);
 			else if (decor == 2)
@@ -333,28 +333,28 @@ void Judge(int num, int decor_1, WanJia& P, FangZhiQU& fangzhiqu, int mod, int i
 				P.fangpian.push(poker);
 		}
 	}
-	else	//ÓëÔ­·ÅÖÃÇø¶¥»¨É«²»Í¬
+	else	//ä¸åŸæ”¾ç½®åŒºé¡¶èŠ±è‰²ä¸åŒ
 	{
 		if (mod != 3)
 		{
-			cout << "     " << i << " P ·ÅÖÃÁËÒ»ÕÅ " << Change(fangzhiqu.card.top()) << endl;
+			cout << "     " << i << " P æ”¾ç½®äº†ä¸€å¼  " << Change(fangzhiqu.card.top()) << endl;
 			cout << "---------------------------------------------" << endl << endl;
 		}
 	}
 }
 
-void Operation(WanJia& P, FangZhiQU& fangzhiqu, PaiDui& paidui,int operation, int mod, int i)	//²Ù×÷Ö´ĞĞ  operationµÈÓÚ0£º´ÓÅÆ¶ÑÖĞ³éÈ¡  1: ´ò³öºÚÌÒ  2£º´ò³öºìÌÒ  3£º´ò³öÃ·»¨  4£º´ò³ö·½Æ¬
+void Operation(WanJia& P, FangZhiQU& fangzhiqu, PaiDui& paidui, int operation, int mod, int i)	//æ“ä½œæ‰§è¡Œ  operationç­‰äº0ï¼šä»ç‰Œå †ä¸­æŠ½å–  1: æ‰“å‡ºé»‘æ¡ƒ  2ï¼šæ‰“å‡ºçº¢æ¡ƒ  3ï¼šæ‰“å‡ºæ¢…èŠ±  4ï¼šæ‰“å‡ºæ–¹ç‰‡
 {
-	int num = 0;	//ÅÆÖµ
-	int decor = 0;	//»¨É«
+	int num = 0;	//ç‰Œå€¼
+	int decor = 0;	//èŠ±è‰²
 
-	//Ñ¡ÔñÅÆ
-	if (operation == 0)			//´ÓÅÆ¶ÑÖĞ³éÈ¡
+	//é€‰æ‹©ç‰Œ
+	if (operation == 0)			//ä»ç‰Œå †ä¸­æŠ½å–
 	{
 		if (mod != 3)
 		{
 			cout << endl << endl << "---------------------------------------------" << endl;
-			cout << "     " << i << " P Ñ¡Ôñ³éÅÆ " << endl;
+			cout << "     " << i << " P é€‰æ‹©æŠ½ç‰Œ " << endl;
 		}
 
 		num = paidui.poker[paidui.top];
@@ -370,71 +370,71 @@ void Operation(WanJia& P, FangZhiQU& fangzhiqu, PaiDui& paidui,int operation, in
 		else
 			paidui.fangpian--;
 	}
-	else if (operation == 1)	//´ò³öºÚÌÒ
+	else if (operation == 1)	//æ‰“å‡ºé»‘æ¡ƒ
 	{
 		if (mod != 3)
 		{
 			cout << endl << endl << "---------------------------------------------" << endl;
-			cout << "     " << i << " P Ñ¡Ôñ´òºÚÌÒ " << endl;
+			cout << "     " << i << " P é€‰æ‹©æ‰“é»‘æ¡ƒ " << endl;
 		}
-		
+
 		num = P.heitao.top();
 		P.heitao.pop();
 		decor = 1;
 	}
-	else if (operation == 2)	//´ò³öºìÌÒ
+	else if (operation == 2)	//æ‰“å‡ºçº¢æ¡ƒ
 	{
 		if (mod != 3)
 		{
 			cout << endl << endl << "---------------------------------------------" << endl;
-			cout << "     " << i << " P Ñ¡Ôñ´òºìÌÒ " << endl;
+			cout << "     " << i << " P é€‰æ‹©æ‰“çº¢æ¡ƒ " << endl;
 		}
-		
+
 		num = P.hongtao.top();
 		P.hongtao.pop();
 		decor = 2;
 	}
-	else if (operation == 3)	//´ò³öÃ·»¨
+	else if (operation == 3)	//æ‰“å‡ºæ¢…èŠ±
 	{
 		if (mod != 3)
 		{
 			cout << endl << endl << "---------------------------------------------" << endl;
-			cout << "     " << i << " P Ñ¡Ôñ´òÃ·»¨ " << endl;
+			cout << "     " << i << " P é€‰æ‹©æ‰“æ¢…èŠ± " << endl;
 		}
-		
+
 		num = P.meihua.top();
 		P.meihua.pop();
 		decor = 3;
 	}
-	else						//´ò³ö·½Æ¬
+	else						//æ‰“å‡ºæ–¹ç‰‡
 	{
 		if (mod != 3)
 		{
 			cout << endl << endl << "---------------------------------------------" << endl;
-			cout << "     " << i << " P Ñ¡Ôñ´ò·½Æ¬ " << endl;
+			cout << "     " << i << " P é€‰æ‹©æ‰“æ–¹ç‰‡ " << endl;
 		}
-		
+
 		num = P.fangpian.top();
 		P.fangpian.pop();
 		decor = 4;
 	}
-	
-	//·ÅÅÆ
-	if (fangzhiqu.card.empty())	//·ÅÖÃÇøÎª¿Õ£¬·ÅÅÆ
+
+	//æ”¾ç‰Œ
+	if (fangzhiqu.card.empty())	//æ”¾ç½®åŒºä¸ºç©ºï¼Œæ”¾ç‰Œ
 	{
 		fangzhiqu.card.push(num);
 		fangzhiqu.decor.push(decor);
 		if (mod != 3)
 		{
-			cout << "     " << i << " P ·ÅÖÃÁËÒ»ÕÅ " << Change(fangzhiqu.card.top()) << endl;
+			cout << "     " << i << " P æ”¾ç½®äº†ä¸€å¼  " << Change(fangzhiqu.card.top()) << endl;
 			cout << "---------------------------------------------" << endl << endl;
 		}
 	}
-	else						//·ÅÖÃÇø²»Îª¿Õ£¬ÅĞ¶ÏÊÇ·ñÊÕÅÆ
+	else						//æ”¾ç½®åŒºä¸ä¸ºç©ºï¼Œåˆ¤æ–­æ˜¯å¦æ”¶ç‰Œ
 		Judge(num, decor, P, fangzhiqu, mod, i);
 }
 
-void Game(int mod)	//¶ÔÕ½  mod=1:ÈËÈË mod=2:ÈË»ú mod=3:»ú»ú
+void Game(int mod)	//å¯¹æˆ˜  mod=1:äººäºº mod=2:äººæœº mod=3:æœºæœº
 {
 	WanJia _1P;
 	WanJia _2P;
@@ -442,59 +442,59 @@ void Game(int mod)	//¶ÔÕ½  mod=1:ÈËÈË mod=2:ÈË»ú mod=3:»ú»ú
 	PaiDui paidui;
 	paidui.create();
 
-	for (int i = 1; i == 1 || i == 2; i++)	//½øĞĞ¶Ô¾Ö   i±íÊ¾£ºÍæ¼Òi²Ù×÷
+	for (int i = 1; i == 1 || i == 2; i++)	//è¿›è¡Œå¯¹å±€   iè¡¨ç¤ºï¼šç©å®¶iæ“ä½œ
 	{
-		int operation = 0;	//²Ù×÷Öµ  0£º´ÓÅÆ¶ÑÖĞ³éÈ¡  1: ´ò³öºÚÌÒ  2£º´ò³öºìÌÒ  3£º´ò³öÃ·»¨  4£º´ò³ö·½Æ¬
+		int operation = 0;	//æ“ä½œå€¼  0ï¼šä»ç‰Œå †ä¸­æŠ½å–  1: æ‰“å‡ºé»‘æ¡ƒ  2ï¼šæ‰“å‡ºçº¢æ¡ƒ  3ï¼šæ‰“å‡ºæ¢…èŠ±  4ï¼šæ‰“å‡ºæ–¹ç‰‡
 
-		//²Ù×÷Ñ¡Ôñ
-		if (mod == 1)		//ÈËÈË
+		//æ“ä½œé€‰æ‹©
+		if (mod == 1)		//äººäºº
 		{
 			if (i == 1)
 				operation = Person(_1P, _2P, fangzhiqu, paidui, i);
 			else
 				operation = Person(_1P, _2P, fangzhiqu, paidui, i);
 		}
-		else if (mod == 2)	//ÈË»ú
+		else if (mod == 2)	//äººæœº
 		{
 			if (i == 1)
 				operation = Person(_1P, _2P, fangzhiqu, paidui, i);
 			else
 				operation = Ai(_2P, _1P, fangzhiqu, paidui, 0);
 		}
-		else	//»ú»ú²âÊÔ
+		else	//æœºæœºæµ‹è¯•
 		{
 			if (i == 1)
 				operation = Ai(_1P, _2P, fangzhiqu, paidui, rule_1);
 			else
 				operation = Ai(_2P, _1P, fangzhiqu, paidui, rule_2);
 		}
-		
-		//²Ù×÷Ö´ĞĞ
-		if (i == 1)		//1P²Ù×÷
+
+		//æ“ä½œæ‰§è¡Œ
+		if (i == 1)		//1Pæ“ä½œ
 			Operation(_1P, fangzhiqu, paidui, operation, mod, i);
-		else			//2P²Ù×÷
+		else			//2Pæ“ä½œ
 			Operation(_2P, fangzhiqu, paidui, operation, mod, i);
-		
-		//½áÊøÅĞ¶Ï
+
+		//ç»“æŸåˆ¤æ–­
 		if (paidui.top >= 52 && mod != 3)
 		{
-			//Ïà¹ØĞÅÏ¢ÌáÊ¾
+			//ç›¸å…³ä¿¡æ¯æç¤º
 			cout << endl << endl;
 			cout << "-----------------------------------------------------------------------" << endl;
-			cout << "Íæ¼Ò2µÄÊÖÅÆÓĞ     ºÚÌÒ: " << _2P.heitao.size() << " ÕÅ  ºìÌÒ: " << _2P.hongtao.size() << " ÕÅ  Ã·»¨: " << _2P.meihua.size() << " ÕÅ  ·½Æ¬: " << _2P.fangpian.size() << " ÕÅ" << endl << endl;
-			cout << "ÅÆ¶ÑÓĞ          ºÚÌÒ: " << paidui.heitao << " ÕÅ  ºìÌÒ: " << paidui.hongtao << " ÕÅ  Ã·»¨: " << paidui.meihua << " ÕÅ  ·½Æ¬: " << paidui.fangpian << " ÕÅ" << endl;
-			cout << "·ÅÖÃÇøÓĞ         ¹² " << fangzhiqu.card.size() << " ÕÅ ÅÆ";
+			cout << "ç©å®¶2çš„æ‰‹ç‰Œæœ‰     é»‘æ¡ƒ: " << _2P.heitao.size() << " å¼   çº¢æ¡ƒ: " << _2P.hongtao.size() << " å¼   æ¢…èŠ±: " << _2P.meihua.size() << " å¼   æ–¹ç‰‡: " << _2P.fangpian.size() << " å¼ " << endl << endl;
+			cout << "ç‰Œå †æœ‰          é»‘æ¡ƒ: " << paidui.heitao << " å¼   çº¢æ¡ƒ: " << paidui.hongtao << " å¼   æ¢…èŠ±: " << paidui.meihua << " å¼   æ–¹ç‰‡: " << paidui.fangpian << " å¼ " << endl;
+			cout << "æ”¾ç½®åŒºæœ‰         å…± " << fangzhiqu.card.size() << " å¼  ç‰Œ";
 			if (!fangzhiqu.card.empty())
-				cout << "     ÅÆ¶¥µÄÅÆÊÇ  " << Change(fangzhiqu.card.top()) << endl << endl;
+				cout << "     ç‰Œé¡¶çš„ç‰Œæ˜¯  " << Change(fangzhiqu.card.top()) << endl << endl;
 			else
 				cout << endl << endl;
-			cout << "Íæ¼Ò1µÄÊÖÅÆÓĞ     ºÚÌÒ: " << _1P.heitao.size() << " ÕÅ  ºìÌÒ: " << _1P.hongtao.size() << " ÕÅ  Ã·»¨: " << _1P.meihua.size() << " ÕÅ  ·½Æ¬: " << _1P.fangpian.size() << " ÕÅ" << endl;
+			cout << "ç©å®¶1çš„æ‰‹ç‰Œæœ‰     é»‘æ¡ƒ: " << _1P.heitao.size() << " å¼   çº¢æ¡ƒ: " << _1P.hongtao.size() << " å¼   æ¢…èŠ±: " << _1P.meihua.size() << " å¼   æ–¹ç‰‡: " << _1P.fangpian.size() << " å¼ " << endl;
 			cout << "-----------------------------------------------------------------------" << endl << endl;
 
 			if (_1P.total() < _2P.total())
-				cout << endl << endl << "       Íæ¼Ò1»ñÊ¤" << endl << endl;
+				cout << endl << endl << "       ç©å®¶1è·èƒœ" << endl << endl;
 			else
-				cout << endl << endl << "       Íæ¼Ò2»ñÊ¤" << endl << endl;
+				cout << endl << endl << "       ç©å®¶2è·èƒœ" << endl << endl;
 			break;
 		}
 		if (mod == 3 && paidui.top >= 52)
@@ -507,52 +507,52 @@ void Game(int mod)	//¶ÔÕ½  mod=1:ÈËÈË mod=2:ÈË»ú mod=3:»ú»ú
 			break;
 		}
 
-		//Íæ¼Ò×ª»»
-		if (i == 2)		
+		//ç©å®¶è½¬æ¢
+		if (i == 2)
 			i -= 2;
 	}
 
-	if (mod != 3)	//»Øµ½²Ëµ¥
+	if (mod != 3)	//å›åˆ°èœå•
 		Menu();
-	else			//Ai²âÊÔ
+	else			//Aiæµ‹è¯•
 	{
 		if (changci > 0)
 		{
-			Sleep(1000);	//ĞèÒªµÈ´ı1ÃëÊ¹ÅÆ¶ÑËæ»ú
+			Sleep(1000);	//éœ€è¦ç­‰å¾…1ç§’ä½¿ç‰Œå †éšæœº
 			Game(3);
 		}
 		else
 		{
-			cout << endl << endl << "       Ëã·¨ĞòºÅ " << rule_1 << " »ñÊ¤£º" << result[0] << " ³¡" << endl;
-			cout << endl << endl << "       Ëã·¨ĞòºÅ " << rule_2 << " »ñÊ¤£º" << result[1] << " ³¡" << endl;
+			cout << endl << endl << "       ç®—æ³•åºå· " << rule_1 << " è·èƒœï¼š" << result[0] << " åœº" << endl;
+			cout << endl << endl << "       ç®—æ³•åºå· " << rule_2 << " è·èƒœï¼š" << result[1] << " åœº" << endl;
 			Menu();
 		}
 	}
 }
 
-void ZaiXian()	//ÔÚÏß¶ÔÕ½
+void ZaiXian()	//åœ¨çº¿å¯¹æˆ˜
 {
-	cout << "Î´¿ª·¢" << endl;
+	cout << "æœªå¼€å‘" << endl;
 	Menu();
 }
 
-void Menu()	//Ö÷²Ëµ¥
+void Menu()	//ä¸»èœå•
 {
-	//²Ëµ¥ÌáÊ¾
+	//èœå•æç¤º
 	int mod = 0;
-	cout << endl << "Ä£Ê½Ñ¡Ôñ£º" << endl;
-	cout << "     1: ±¾µØ¶ÔÕ½     2£ºÈË»ú¶ÔÕ½     3£ºÔÚÏß¶ÔÕ½     4£ºAi±ÈÈü     5£ºÍË³ö" << endl;
-	cout << "     ÇëÊäÈëÏëÒªÍæµÄÄ£Ê½ >>> ";
+	cout << endl << "æ¨¡å¼é€‰æ‹©ï¼š" << endl;
+	cout << "     1: æœ¬åœ°å¯¹æˆ˜     2ï¼šäººæœºå¯¹æˆ˜     3ï¼šåœ¨çº¿å¯¹æˆ˜     4ï¼šAiæ¯”èµ›     5ï¼šé€€å‡º" << endl;
+	cout << "     è¯·è¾“å…¥æƒ³è¦ç©çš„æ¨¡å¼ >>> ";
 	cin >> mod;
 
-	//ÊäÈëÌáÊ¾
+	//è¾“å…¥æç¤º
 	while (mod != 1 && mod != 2 && mod != 3 && mod != 4 && mod != 5)
 	{
-		cout << "     ÇëÊäÈëÊı×Ö 1 ~ 5 >>> ";
+		cout << "     è¯·è¾“å…¥æ•°å­— 1 ~ 5 >>> ";
 		cin >> mod;
 	}
-	
-	//Ä£Ê½Ñ¡Ôñ 1: ±¾µØ¶ÔÕ½     2£ºÈË»ú¶ÔÕ½     3£ºÔÚÏß¶ÔÕ½     4£ºAi±ÈÈü     5£ºÍË³ö
+
+	//æ¨¡å¼é€‰æ‹© 1: æœ¬åœ°å¯¹æˆ˜     2ï¼šäººæœºå¯¹æˆ˜     3ï¼šåœ¨çº¿å¯¹æˆ˜     4ï¼šAiæ¯”èµ›     5ï¼šé€€å‡º
 	if (mod == 1)
 		Game(1);
 	else if (mod == 2)
@@ -561,31 +561,31 @@ void Menu()	//Ö÷²Ëµ¥
 		ZaiXian();
 	else if (mod == 4)
 	{
-		result[0] = result[1] = 0;	//»ñÊ¤³¡´ÎÖÃÁã
-		cout << "ÇëÊäÈëAi²ßÂÔĞòºÅ" << endl;
-		cout << "     0£ºËùÓĞ£» 1£ºÅÆ¶ÑÊıÁ¿£» 2£º¶ÔÊÖÊÖÅÆÊıÁ¿£» 3£º·ÅÖÃÇø¶¥ÅÆ" << endl;
-		cout << "     1 P ²ßÂÔĞòºÅ >>> ";
+		result[0] = result[1] = 0;	//è·èƒœåœºæ¬¡ç½®é›¶
+		cout << "è¯·è¾“å…¥Aiç­–ç•¥åºå·" << endl;
+		cout << "     0ï¼šæ‰€æœ‰ï¼› 1ï¼šç‰Œå †æ•°é‡ï¼› 2ï¼šå¯¹æ‰‹æ‰‹ç‰Œæ•°é‡ï¼› 3ï¼šæ”¾ç½®åŒºé¡¶ç‰Œ" << endl;
+		cout << "     1 P ç­–ç•¥åºå· >>> ";
 		while (cin >> rule_1)
 		{
 			if (!(0 <= rule_1 && rule_1 <= 3))
-				cout << "     ÇëÊäÈëÊı×Ö 0 ~ 3 >>> ";
+				cout << "     è¯·è¾“å…¥æ•°å­— 0 ~ 3 >>> ";
 			else
 				break;
 		}
-		cout << "     0£ºËùÓĞ£» 1£ºÅÆ¶ÑÊıÁ¿£» 2£º¶ÔÊÖÊÖÅÆÊıÁ¿£» 3£º·ÅÖÃÇø¶¥ÅÆ" << endl;
-		cout << "     2 P ²ßÂÔĞòºÅ >>> ";
+		cout << "     0ï¼šæ‰€æœ‰ï¼› 1ï¼šç‰Œå †æ•°é‡ï¼› 2ï¼šå¯¹æ‰‹æ‰‹ç‰Œæ•°é‡ï¼› 3ï¼šæ”¾ç½®åŒºé¡¶ç‰Œ" << endl;
+		cout << "     2 P ç­–ç•¥åºå· >>> ";
 		while (cin >> rule_2)
 		{
 			if (!(0 <= rule_2 && rule_2 <= 3))
-				cout << "     ÇëÊäÈëÊı×Ö 0 ~ 3 >>> ";
+				cout << "     è¯·è¾“å…¥æ•°å­— 0 ~ 3 >>> ";
 			else
 				break;
 		}
-		cout << "     ÇëÊäÈë±ÈÈü³¡´Î >>> ";
+		cout << "     è¯·è¾“å…¥æ¯”èµ›åœºæ¬¡ >>> ";
 		while (cin >> changci)
 		{
 			if (!(0 < changci && changci <= 10))
-				cout << "     ÓÉÓÚËæ»úËã·¨µÄÔ­Òò£¬¹ı´óµÄ³¡´Î»áµ¼ÖÂµÈ´ıÊ±¼ä¹ı¾Ã£¬ÇëÊäÈëÊı×Ö 1 ~ 10 >>> ";
+				cout << "     ç”±äºéšæœºç®—æ³•çš„åŸå› ï¼Œè¿‡å¤§çš„åœºæ¬¡ä¼šå¯¼è‡´ç­‰å¾…æ—¶é—´è¿‡ä¹…ï¼Œè¯·è¾“å…¥æ•°å­— 1 ~ 10 >>> ";
 			else
 				break;
 		}
@@ -598,5 +598,6 @@ void Menu()	//Ö÷²Ëµ¥
 int main()
 {
 	Menu();
+	system("pause");
 	return 0;
 }

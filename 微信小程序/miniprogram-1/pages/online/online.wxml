@@ -1,0 +1,32 @@
+<view  class="container">
+  <!-- <image class="tongyong" src="/tupian/beijing.png"></image> -->
+  <view class="table">
+    <view class="tr">
+      <view class="th">head1</view>
+      <view class="th">head2</view>
+    </view>
+      <block >
+        <view class="tr" wx:for="{{arr.length}}" wx:key="index">
+        <view class="td">{{arr[index].uuid}}</view>
+        <view class="td">{{arr[index].host_id}}</view>
+        </view>
+      </block>
+    </view>
+    
+    <input class="txt" bindinput ="getuuid" placeholder="请输入uuid进入房间"/>
+    <input class="txt" bindinput ="getindex" placeholder="请输入页数"/>
+    <input class="txt" bindinput ="getuuid1" placeholder="请输入uuid查询结果"/>
+      <view class="box0">
+        <button bindtap="cx" class="btn" >查询结果</button>
+      </view>
+      <view class="box1">
+        <button bindtap="cj" class="btn" >创建游戏</button>
+      </view>
+      <view class="box2">
+        <button bindtap="jr" class="btn" >加入游戏</button>
+      </view>
+      <view class="box3">
+        <button bindtap="hq" class="btn" >获取列表</button>
+      </view>
+
+</view> 

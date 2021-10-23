@@ -5,7 +5,9 @@
     "pages/logs/logs",
     "pages/bendi/bendi",
     "pages/renji/renji",
-   "pages/denglu/denglu"
+    "pages/denglu/denglu",
+    "pages/online/online",
+    "pages/play/play"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,6 +1,5 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log.date}}</text>
-  </block>
-</view>
+<view>P{{arr.data.winner}}win</view>
+<view>host_id:{{arr.data.host_id}}</view>
+<view>client_id:{{arr.data.client_id}}</view>
+<view>……</view>
+<view>详情可进入控制台查看</view>

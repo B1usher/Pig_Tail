@@ -5,8 +5,9 @@
       <image mode="heightFix" src="/tupian/P1.png"></image>
     </button>
     <view class="pid">id</view>
-    <button  size="mini">
-      <text class="tg">托管</text>
+    <button wx:if="{{tg1==0}}" bindtap="tuoguan1" size="mini">托管
+    </button>
+    <button wx:if="{{tg1==1}}" bindtap="quxiaotuoguan1" size="mini">取消托管
     </button>
   </view>
 </view>
@@ -20,20 +21,20 @@
 
 
   <view class="major">
-      <button  class="box" disabled="{{(flag+1)%2}}&&{{p1fang}}" bindtap="chufang1" data-kind="{{0}}" >
+      <button  class="box" disabled="{{(flag+1)%2||!p1fang}}" bindtap="chufang1" data-kind="{{0}}" >
         <image  class="pic" src="/tupian/fangpian.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2}}&&{{p1mei}}"  bindtap="chumei1" data-kind="{{1}}">
+      <button class="box" disabled="{{(flag+1)%2||!p1mei}}"  bindtap="chumei1" data-kind="{{1}}">
         <image class="pic" src="/tupian/meihua.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2}}&&{{p1hong}}"  bindtap="chuhong1" data-kind="{{2}}">
+      <button class="box" disabled="{{(flag+1)%2||!p1hong}}"  bindtap="chuhong1" data-kind="{{2}}">
         <image class="pic" src="/tupian/hongtao.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2}}&&{{p1mei}}"  bindtap="chuhei1" data-kind="{{3}}">
+      <button class="box" disabled="{{(flag+1)%2||!p1mei}}"  bindtap="chuhei1" data-kind="{{3}}">
         <image class="pic" src="/tupian/heitao.png"></image>
       </button>
   </view>
-<view class="turn" wx:if="{{flag%2}}">电脑回合</view>
+<view class="turn" wx:if="{{flag%2}}">P1回合</view>
 <view class="turn" wx:if="{{(flag+1)%2}}">等待对方出牌</view>
 
 <view class="card">
@@ -52,19 +53,19 @@
     </button>
 </view>
 
-<view class="turn" wx:if="{{(flag+1)%2}}">玩家回合</view>
+<view class="turn" wx:if="{{(flag+1)%2}}">P2回合</view>
 <view class="turn" wx:if="{{flag%2}}">等待对方出牌</view>
   <view class="major">
-      <button class="box" disabled="{{flag%2}}&&{{p2fang}}" bindtap="chufang2" data-kind="{{0}}">
+      <button class="box" disabled="{{flag%2||!p2fang}}" bindtap="chufang2" data-kind="{{0}}">
         <image class="pic"  src="/tupian/fangpian.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2}}&&{{p2mei}}" bindtap="chumei2" data-kind="{{1}}">
+      <button class="box" disabled="{{flag%2||!p2mei}}" bindtap="chumei2" data-kind="{{1}}">
         <image class="pic"  src="/tupian/meihua.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2}}&&{{p2hong}}" bindtap="chuhong2" data-kind="{{2}}">
+      <button class="box" disabled="{{flag%2||!p2hong}}" bindtap="chuhong2" data-kind="{{2}}">
         <image class="pic" src="/tupian/hongtao.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2}}&&{{p2hei}}" bindtap="chuhei2" data-kind="{{3}}">
+      <button class="box" disabled="{{flag%2||!p2hei}}" bindtap="chuhei2" data-kind="{{3}}">
         <image class="pic" src="/tupian/heitao.png"></image>
       </button>
   </view>   
@@ -81,8 +82,11 @@
     <button open-type="switchTab"  class="logo">
       <image mode="heightFix" src="/tupian/P2.png"></image>
     </button>
-    <view class="pid">id</view>
-    <button class="btn" size="mini">托管</button>
+    <view bindtap="tuoguan" class="pid">id</view>
+    <button wx:if="{{tg2==0}}" bindtap="tuoguan2" size="mini">托管
+    </button>
+    <button wx:if="{{tg2==1}}" bindtap="quxiaotuoguan2" size="mini">取消托管
+    </button>
   </view>
 </view>
 </view>

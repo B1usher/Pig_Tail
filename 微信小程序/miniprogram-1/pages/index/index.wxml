@@ -1,7 +1,7 @@
 <view class="container">
   <image class="tongyong" src="/tupian/beijing.png"></image> 
-  <image class="shouye" src="/tupian/shouye.png"></image> 
-
+   
+<image class="shouye" src="/tupian/shouye.png"></image>
     <view class="box1">
       <navigator url="/pages/bendi/bendi" open-type="reLaunch">本地游戏</navigator>
     </view>

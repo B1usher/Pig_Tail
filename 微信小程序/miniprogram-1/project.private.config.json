@@ -35,6 +35,30 @@
           "pathName": "pages/renji/renji",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/denglu/denglu",
+          "pathName": "pages/denglu/denglu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/logs/logs",
+          "pathName": "pages/logs/logs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/online/online",
+          "pathName": "pages/online/online",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/play/play",
+          "pathName": "pages/play/play",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,78 +1,50 @@
-.container{
-  margin:0rpx;
-  padding: 0rpx;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-.tongyong{
+
+page{
+  height: 100%;    /* 使用page的height可以使页面占全屏 */
+  background-color: #c9e1eb;
+ }
+ .tongyong{
   position: absolute;width: 100%;height: 100%;
 }
-.shouye{
-  position: absolute;height: 30%;width: 60%;
-  z-index: 2;margin: 40%;
+.login-container{
+  padding: 0 10%;
+  height: 100%;
 }
-.box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color:#ffe;
-  position: absolute;
-  background-color: rgb(9, 133, 235);
-  z-index: 1;
-  margin:20% auto;
-  width: 40%;
-  height: 8%;
-  border-radius: 15rpx;
-  font-size: larger;
-  justify-content:center
+
+.login-box{
+  margin-top: 10%;
+  padding: 10% 5%;
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px #888888;
+
 }
-.box1{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color:#ffe;
-  position: absolute;
-  background-color: rgb(9, 133, 235);
-  z-index: 1;
-  margin:95% auto;
-  width: 40%;
-  height: 8%;
-  border-radius: 15rpx;
-  font-size: larger;
-  justify-content:center
+.login-box>input{
+  margin: 5% 0 8% 0;
+  border-bottom: 1rpx solid lightgray;
 }
-.box2{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color:#ffe;
-  position: absolute;
-  background-color: rgb(9, 133, 235);
-  z-index: 1;
-  margin:115%;
-  width: 40%;
-  height: 8%;
-  border-radius: 15rpx;
-  font-size: larger;
-  justify-content:center
+.login-btn{
+  width: 100%!important;
+  background-color: #2f6afd;
+  color: white;
+  font-weight: normal;
 }
-.box3{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color:#ffe;
-  position: absolute;
-  background-color: rgb(9, 133, 235);
-  z-index: 1;
-  margin:135% auto;
-  width: 40%;
-  height: 8%;
-  border-radius: 15rpx;
-  font-size:larger;
-  align-items: center;
-  justify-content:center
+
+.three-line{
+  margin: 8% 0;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,13 @@
-<view class="container">
-  <image class="tongyong" src="/tupian/beijing.png"></image>
+
+
+
+<view  class="login-container">
+  <view class="login-box">
+    <label>用户名</label>
+    <input bindinput ="getyhm" placeholder="请输入用户名"/>
+    <label>密码</label>
+    <input bindinput="getmm" placeholder="请输入密码"/>
+    <button bindtap="denglu" class="login-btn">立即登录</button>
+  </view>
   <image class="shouye" src="/tupian/shouye.png"></image>
-    <view class="box">登录</view>
-    <view class="box1">
-    <navigator url="/pages/bendi/bendi" open-type="reLaunch">创建游戏</navigator>
-    </view>
-    <view class="box2">加入游戏</view>
-    <view class="box3">返回首页</view>
 </view>

@@ -3,19 +3,19 @@
 
 &nbsp;
 ## 一、运行环境
----
+
 微信开发者工具
 
 &nbsp;
 ## 二、使用方法
----
+
 1、将微信小程序文件夹内文件导入微信开发者工具 或 使用体验版二维码并打开调试模式
-https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_211024154700_oGR_P5fTZQmV63f7QkNoRzbcYK6Q.jpg
+[1]: https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_211024154700_oGR_P5fTZQmV63f7QkNoRzbcYK6Q.jpg
 2、C++文字版打开Debug文件夹内exe文件!
 
 &nbsp;
 ## 三、游戏玩法
----
+
 由一名玩家开始，从<卡组>随机抽取翻开一张扑克牌，置于<放置区>上。
 
 切换到另外一名玩家操作，执行1操作，此时插入判定:
@@ -37,4 +37,4 @@ https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_21102415
 剩余卡片数量小者获胜;
 
 数量相同则判断为平局。
-https://img2020.cnblogs.com/blog/2515504/202109/2515504-20210924095841663-358698831.png
+[1]: https://img2020.cnblogs.com/blog/2515504/202109/2515504-20210924095841663-358698831.png

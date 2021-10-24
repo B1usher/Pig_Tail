@@ -33,12 +33,15 @@ Page({
         fail(res)
         {wx.showToast({title: '创建失败',})}
       })
+
   },
   
   getuuid(res){
     this.setData({uuid:res.detail.value});
   },
   jr(){
+    console.log(this.data.uuid);
+    wx.setStorageSync('uuid', this.data.uuid);
     wx.request({
       url: 'http://172.17.173.97:9000/api/game/'+this.data.uuid,
       method:'post',
@@ -46,7 +49,10 @@ Page({
       success(res)
       {
         wx.showToast({title: '加入成功',})
-        console.log(res.data);  
+       
+        wx.navigateTo({
+          url: '/pages/play/play',
+        }) 
       },
       fail(res)
       {wx.showToast({title: '加入失败',})}
@@ -72,6 +78,7 @@ Page({
       fail(res)
       {wx.showToast({title: '查询失败',})}
     })
+
   },
   getindex(res){
     this.setData({index:res.detail.value})

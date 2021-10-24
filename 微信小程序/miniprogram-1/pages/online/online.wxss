@@ -8,8 +8,8 @@
   height: 3rem;
   align-items: center;
   display: inline;
-  margin: auto 150rpx;
-  font-size: x-large;
+  margin: auto 90rpx;
+  font-size: large;
 }
 .td {
   width: 40%;
@@ -18,7 +18,7 @@
   height: 3rem;
   align-items: center;
   display: inline;
-  margin: 30rpx 100rpx;
+  margin: 30rpx 50rpx;
  }
 
 

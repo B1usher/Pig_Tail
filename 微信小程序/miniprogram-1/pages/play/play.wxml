@@ -4,6 +4,7 @@
     <button open-type="switchTab" class="logo">
       <image mode="heightFix" src="/tupian/bot.png"></image>
     </button>
+    <view class="tt">uuid:{{uuid}}</view>
     <!-- <view class="pid">id</view> -->
     <!-- <button  size="mini">
       <text class="tg">托管</text>
@@ -12,67 +13,67 @@
 </view>
 
 
-  <view class="txt">{{p1fang}}</view>
-  <view class="txt">{{p1mei}}</view> 
-  <view class="txt">{{p1hong}}</view>
-  <view class="txt">{{p1hei}}</view>
+  <view class="txt">{{pfang}}</view>
+  <view class="txt">{{pmei}}</view> 
+  <view class="txt">{{phong}}</view>
+  <view class="txt">{{phei}}</view>
 
 
 
   <view class="major">
-      <button  class="box" disabled="{{(flag+1)%2||!p1fang}}" bindtap="chufang1" data-kind="{{0}}" >
+      <button  class="box"   >
         <image  class="pic" src="/tupian/fangpian.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2||!p1mei}}"  bindtap="chumei1" data-kind="{{1}}">
+      <button class="box"  >
         <image class="pic" src="/tupian/meihua.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2||!p1hong}}"  bindtap="chuhong1" data-kind="{{2}}">
+      <button class="box"  >
         <image class="pic" src="/tupian/hongtao.png"></image>
       </button>
-      <button class="box" disabled="{{(flag+1)%2||!p1hei}}"  bindtap="chuhei1" data-kind="{{3}}">
+      <button class="box" >
         <image class="pic" src="/tupian/heitao.png"></image>
       </button>
   </view>
-<view class="turn" wx:if="{{flag%2}}">电脑回合</view>
+<view class="turn" wx:if="{{flag%2}}">对手回合</view>
 <view class="turn" wx:if="{{(flag+1)%2}}">等待对方出牌</view>
 
 <view class="card">
-    <button bindtap="qupai" data-num1="{{shengyu}}" data-num2="{{paidui}}" class="pai" >
+    <button bindtap="fanpai"  class="pai" >
       <image class="bei" src="/tupian/paibei.png"></image>
       <view class="num">{{shengyu}}</view>
     </button>
 
     <button class="pai" >
-      <image class="bei" wx:if="{{key==0}}" src="/tupian/fangpian.png"></image>
-      <image class="bei" wx:elif="{{key==1}}" src="/tupian/meihua.png"></image>
-      <image class="bei" wx:elif="{{key==2}}" src="/tupian/hongtao.png"></image> 
-      <image class="bei" wx:elif="{{key==3}}" src="/tupian/heitao.png"></image>
+      <image class="bei" wx:if="{{key=='D'}}" src="/tupian/fangpian.png"></image>
+      <image class="bei" wx:elif="{{key=='C'}}" src="/tupian/meihua.png"></image>
+      <image class="bei" wx:elif="{{key=='H'}}" src="/tupian/hongtao.png"></image> 
+      <image class="bei" wx:elif="{{key=='S'}}" src="/tupian/heitao.png"></image>
       <image class="bei" wx:else src="/tupian/paibei.png"></image>
-      <view class="num">{{paidui}}</view>
+      <view class="num">{{paiduifang.length+paiduimei.length+paiduihong.length+paiduihei.length}}</view>
     </button>
 </view>
 
 <view class="turn" wx:if="{{(flag+1)%2}}">玩家回合</view>
 <view class="turn" wx:if="{{flag%2}}">等待对方出牌</view>
   <view class="major">
-      <button class="box" disabled="{{flag%2||!p2fang}}" bindtap="chufang2" data-kind="{{0}}">
+      <button class="box" disabled="{{flag||!shoufang.length}}" bindtap="chufang" >
         <image class="pic"  src="/tupian/fangpian.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2||!p2mei}}" bindtap="chumei2" data-kind="{{1}}">
+      <button class="box" disabled="{{flag||!shoumei.length}}" bindtap="chumei" >
         <image class="pic"  src="/tupian/meihua.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2||!p2hong}}" bindtap="chuhong2" data-kind="{{2}}">
+      <button class="box" disabled="{{flag||!shouhong.length}}" bindtap="chuhong" >
         <image class="pic" src="/tupian/hongtao.png"></image>
       </button>
-      <button class="box" disabled="{{flag%2||!p2hei}}" bindtap="chuhei2" data-kind="{{3}}">
+      <button class="box" disabled="{{flag||!shouhei.length}}" bindtap="chuhei" >
         <image class="pic" src="/tupian/heitao.png"></image>
       </button>
   </view>   
 
-  <view class="txt">{{p2fang}}</view>
-  <view class="txt">{{p2mei}}</view> 
-  <view class="txt">{{p2hong}}</view>
-  <view class="txt">{{p2hei}}</view>
+  <view class="txt">{{fang}}</view>
+  <view class="txt">{{mei}}</view> 
+  <view class="txt">{{hong}}</view>
+  <view class="txt">{{hei}}</view>
 
 
 
@@ -82,7 +83,7 @@
       <image mode="heightFix" src="/tupian/P2.png"></image>
     </button>
     <!-- <view class="pid">id</view> -->
-    <!-- <button class="btn" size="mini">托管</button> -->
+    <button bindtap="get" class="btn" size="mini">获取上一步</button>
   </view>
 </view>
 </view>

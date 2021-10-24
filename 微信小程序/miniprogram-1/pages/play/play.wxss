@@ -5,6 +5,7 @@
 .hd image{height: 100%;}
 
 .txt{font-size: 20rpx;display: inline;margin: 10rpx 85rpx;}
+.tt{display: flex;color: rgb(43, 117, 230);}
 
 .turn{position: relative;text-align: center;color:rgb(43, 66, 197)}
 .major .pic{width: 100rpx;height: 80rpx;position: relative;}

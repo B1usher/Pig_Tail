@@ -177,7 +177,6 @@ Page({
     if(this.data.symei==0)this.setData({f1:0})
     if(this.data.syhong==0)this.setData({f2:0})
     if(this.data.syhei==0)this.setData({f3:0})
-
     if(this.data.shengyu==0) 
     {
       var p1=this.data.p1fang+this.data.p1mei+this.data.p1hong+this.data.p1hei;
@@ -205,7 +204,6 @@ Page({
           duration:2000
           });
       }
-      
     }
 
     this.xiayiwei();

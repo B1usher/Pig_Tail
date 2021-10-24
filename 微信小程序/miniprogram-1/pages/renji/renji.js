@@ -31,7 +31,58 @@ Page({
     f3:1,
     ai:1
   },
-  
+  ai()
+  {
+    var amount=[this.data.syfang,this.data.symei,this.data.syhong,this.data.syhei]; 
+    var shoupai=[this.data.p1fang,this.data.p1mei,this.data.p1hong,this.data.p1hei];
+    var amount1=[this.data.p2fang,this.data.p2mei,this.data.p2hong,this.data.p2hei];
+    var score=[0,0,0,0,0];
+    score[0] = 3;
+    if(this.data.shengyu<=10)
+    {
+      if(this.data.syfang==0)score[0] +=13;
+      if(this.data.symei==0)score[0] +=13;
+      if(this.data.syhong==0)score[0] +=13; 
+      if(this.data.syhei==0)score[0] +=13;
+    }
+    for (var i = 0; i < 4; i++)
+    {
+      if (shoupai[i] != 0)	
+      {
+        for (var j = 0; j < 4; j++)
+        {
+          if (amount[j] <= amount[i])
+          score[i + 1] += 1;
+          if (amount1[j] <= amount1[i])
+          score[i + 1] += 1;
+        }
+        score[i + 1] += 4;
+      }
+      else score[1+i]=0;
+    }   
+    if(this.data.paidui)
+    score[1+this.data.key]=0;
+    var max=0,tag=0;
+    for(var i=0;i<5;i++)
+    {
+      if(score[i]>=max){
+        tag=i;
+        max=score[i];
+      }
+    }
+    console.log(score);
+    if(tag==0)
+    this.qupai();
+    else if(tag==4)
+    this.chuhei1();
+    else if(tag==3)
+    this.chuhong1();
+    else if(tag==2)
+    this.chumei1();
+    else if(tag==1)
+    this.chufang1();
+    console.log(tag);
+  },
   xiaojie()
     {
       if(this.data.flag%2)
@@ -74,22 +125,22 @@ Page({
           }
   },
 
-  qupai(res)
+  qupai()
   {
-    res.currentTarget.dataset.num1--,
-    res.currentTarget.dataset.num2++
+    var num1=this.data.shengyu;
+    var num2=this.data.paidui;
+    num1--,
+    num2++;
     this.setData({
-      shengyu:res.currentTarget.dataset.num1,
-      paidui:res.currentTarget.dataset.num2
+      shengyu:num1,
+      paidui:num2
     })
-    
     var temp=Math.round(Math.random()*3);
     while(1)
     { 
       temp=Math.round(Math.random()*3);
       if(temp==0&&this.data.f0!=0||temp==1&&this.data.f1!=0||temp==2&&this.data.f2!=0||temp==3&&this.data.f3!=0)break;    
     }
-    
     if(temp==0)
     {
       var s=this.data.syfang;
@@ -100,7 +151,6 @@ Page({
       syfang:s,
       ljfang:l
       })
-
       if(this.data.key==temp){this.xiaojie();}
       else if(this.data.paidui!=0){this.setData({key:0})}
       
@@ -185,9 +235,12 @@ Page({
       
     }
     this.xiayiwei();
-    console.log(this.data.key)
+    console.log(this.data.key);
+    console.log(this.data.flag);
     if(this.data.flag%2)
-    this.ai(res);
+    this.ai();
+    // if(this.data.flag%2)
+    // this.ai(this.data.p1fang,this.data.p1mei,this.data.p1hong,this.data.p1hei,this.data.p2fang,this.data.p2mei,this.data.p2hong,this.data.p2hei,this.data.syfang,this.data.symei,this.data.syhong,this.data.syhei,this.data.paidui,this.data.key);
     
   }, 
 
@@ -212,7 +265,7 @@ Page({
     pd++;
     this.setData({p2mei:temp,paidui:pd,ljmei:lj})
     if(this.data.key==1)this.xiaojie();
-    else this.setData({key:1})
+    else this.setData({key:1});
     this.xiayiwei();
   },
   chuhong2(){
@@ -224,7 +277,7 @@ Page({
     pd++;
     this.setData({p2hong:temp,paidui:pd,ljhong:lj})
     if(this.data.key==2)this.xiaojie();
-    else this.setData({key:2})
+    else this.setData({key:2});
     this.xiayiwei();
   },
   chuhei2(){
@@ -236,7 +289,7 @@ Page({
     pd++;
     this.setData({p2hei:temp,paidui:pd,ljhei:lj})
     if(this.data.key==3)this.xiaojie();
-    else this.setData({key:3})
+    else this.setData({key:3});
     this.xiayiwei();
   },
   chufang1(){
@@ -248,7 +301,7 @@ Page({
     pd++;
     this.setData({p1fang:temp,paidui:pd,ljfang:lj})
     if(this.data.key==0)this.xiaojie();
-    else this.setData({key:0})
+    else this.setData({key:0});
     this.xiayiwei();
   },
   chumei1(){
@@ -260,7 +313,7 @@ Page({
     pd++;
     this.setData({p1mei:temp,paidui:pd,ljmei:lj})
     if(this.data.key==1)this.xiaojie();
-    else this.setData({key:1})
+    else this.setData({key:1});
     this.xiayiwei();
   },
   chuhong1(){
@@ -272,9 +325,9 @@ Page({
     pd++;
     this.setData({p1hong:temp,paidui:pd,ljhong:lj})
     if(this.data.key==2)this.xiaojie();
-    else this.setData({key:2})
+    else this.setData({key:2});
     this.xiayiwei();
-  },
+  }, 
   chuhei1(){
     var temp=this.data.p1hei;
     temp--;
@@ -286,23 +339,17 @@ Page({
     if(this.data.key==3)this.xiaojie();
     else this.setData({key:3})
     this.xiayiwei();
+
   },
 
   xiayiwei(){
     var f=this.data.flag;
     f++;
-    this.setData({flag:f})
+    this.setData({flag:f});
   },
   
 
-  ai(res){
-    wx.showToast({
-      title: '此处调用了ai',
-      icon:"none",
-      duration:2000
-      });
-    //this.qupai(res);
-  },
+
  
   /**
    * 生命周期函数--监听页面加载

@@ -3,6 +3,7 @@ PigTail/Debug/*
 PigTail/PigTail/*
 PigTail/Release/*
 PigTail/PigTail.sln
+PigTail/UnitTest1/*
 
 !PigTail/PigTail/main.cpp
 !PigTail/Debug/PigTail.exe

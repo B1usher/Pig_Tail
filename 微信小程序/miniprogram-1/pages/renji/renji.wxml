@@ -8,6 +8,7 @@
     <!-- <button  size="mini">
       <text class="tg">托管</text>
     </button> -->
+    <!-- <button bindtap="ai" wx:if="{{flag%2}}">点我我就出</button> -->
   </view>
 </view>
 
@@ -22,7 +23,7 @@
   <view class="major">
       <button  class="box" disabled="{{(flag+1)%2||!p1fang}}" bindtap="chufang1" data-kind="{{0}}" >
         <image  class="pic" src="/tupian/fangpian.png"></image>
-      </button>
+      </button> 
       <button class="box" disabled="{{(flag+1)%2||!p1mei}}"  bindtap="chumei1" data-kind="{{1}}">
         <image class="pic" src="/tupian/meihua.png"></image>
       </button>
@@ -37,7 +38,7 @@
 <view class="turn" wx:if="{{(flag+1)%2}}">等待对方出牌</view>
 
 <view class="card">
-    <button bindtap="qupai" data-num1="{{shengyu}}" data-num2="{{paidui}}" class="pai" >
+    <button bindtap="qupai"  class="pai" >
       <image class="bei" src="/tupian/paibei.png"></image>
       <view class="num">{{shengyu}}</view>
     </button>

@@ -10,7 +10,7 @@
 ## 二、使用方法
 
 1、将微信小程序文件夹内文件导入微信开发者工具 或 使用体验版二维码并打开调试模式
-[1]: https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_211024154700_oGR_P5fTZQmV63f7QkNoRzbcYK6Q.jpg
+![二维码](https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_211024154700_oGR_P5fTZQmV63f7QkNoRzbcYK6Q.jpg)
 2、C++文字版打开Debug文件夹内exe文件!
 
 &nbsp;
@@ -37,4 +37,4 @@
 剩余卡片数量小者获胜;
 
 数量相同则判断为平局。
-[1]: https://img2020.cnblogs.com/blog/2515504/202109/2515504-20210924095841663-358698831.png
+![规则](https://img2020.cnblogs.com/blog/2515504/202109/2515504-20210924095841663-358698831.png)

@@ -11,6 +11,7 @@
 
 1、将微信小程序文件夹内文件导入微信开发者工具 或 使用体验版二维码并打开调试模式
 ![二维码](https://images.cnblogs.com/cnblogs_com/blogs/704044/galleries/2050576/o_211024154700_oGR_P5fTZQmV63f7QkNoRzbcYK6Q.jpg)
+
 2、C++文字版打开Debug文件夹内exe文件!
 
 &nbsp;

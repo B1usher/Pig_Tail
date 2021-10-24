@@ -30,68 +30,58 @@ Page({
     hong:0,
     hei:0
   },
-  // ai()
-  // {
-  //   var amount=[this.data.syfang,this.data.symei,this.data.syhong,this.data.syhei]; 
-  //   var shoupai=[this.data.p1fang,this.data.p1mei,this.data.p1hong,this.data.p1hei];
-  //   var amount1=[this.data.p2fang,this.data.p2mei,this.data.p2hong,this.data.p2hei];
-  //   var score=[0,0,0,0,0];
-  //   score[0] = 3;
-  //   if(this.data.shengyu<=10)
-  //   {
-  //     if(this.data.syfang==0)score[0] +=13;
-  //     if(this.data.symei==0)score[0] +=13;
-  //     if(this.data.syhong==0)score[0] +=13; 
-  //     if(this.data.syhei==0)score[0] +=13;
-  //   }
-  //   for (var i = 0; i < 4; i++)
-  //   {
-  //     if (shoupai[i] != 0)	
-  //     {
-  //       for (var j = 0; j < 4; j++)
-  //       {
-  //         if (amount[j] <= amount[i])
-  //         score[i + 1] += 1;
-  //         if (amount1[j] <= amount1[i])
-  //         score[i + 1] += 1;
-  //       }
-  //       score[i + 1] += 4;
-  //     }
-  //     else score[1+i]=0;
-  //   }   
-  //   if(this.data.paidui)
-  //   score[1+this.data.key]=0;
-  //   var max=0,tag=0;
-  //   for(var i=0;i<5;i++)
-  //   {
-  //     if(score[i]>=max){
-  //       tag=i;
-  //       max=score[i];
-  //     }
-  //   }
-  //   console.log(score);
-  //   if(tag==0)
-  //   this.qupai();
-  //   else if(tag==4)
-  //   this.chuhei1();
-  //   else if(tag==3)
-  //   this.chuhong1();
-  //   else if(tag==2)
-  //   this.chumei1();
-  //   else if(tag==1)
-  //   this.chufang1();
-  //   console.log(tag);
-  // },
+  ai()
+  {
 
-
-
-
-
-
-
-
-
-
+    this.get();
+    var shoupai=[this.data.shoufang.length,this.data.shoumei.length,this.data.shouhong.length,this.data.shouhei.length];
+    var amount1=[this.data.pfang,this.data.pmei,this.data.phong,this.data.phei];
+    var score=[0,0,0,0,0];
+    score[0] = 3;
+    for (var i = 0; i < 4; i++)
+    {
+      if (shoupai[i] != 0)	
+      {
+        for (var j = 0; j < 4; j++)
+        {
+          if (amount1[j] <= amount1[i])
+          score[i + 1] += 1;
+        }
+        score[i + 1] += 4;
+      }
+      else score[1+i]=0;
+    }   
+    if(this.data.key=='UN');
+    else if(this.data.key=='D')
+    score[1]=0;
+    else if(this.data.key=='C')
+    score[2]=0;
+    else if(this.data.key=='H')
+    score[3]=0;
+    else if(this.data.key=='S')
+    score[4]=0;
+    
+    var max=0,tag=0;
+    for(var i=0;i<5;i++)
+    {
+      if(score[i]>=max){
+        tag=i;
+        max=score[i];
+      }
+    }
+    console.log(score);
+    if(tag==0)
+    this.fanpai();
+    else if(tag==4)
+    this.chuhei();
+    else if(tag==3)
+    this.chuhong();
+    else if(tag==2)
+    this.chumei();
+    else if(tag==1)
+    this.chufang();
+    console.log(tag);
+  },
 
 
 

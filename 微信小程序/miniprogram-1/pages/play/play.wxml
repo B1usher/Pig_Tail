@@ -83,7 +83,8 @@
       <image mode="heightFix" src="/tupian/P2.png"></image>
     </button>
     <!-- <view class="pid">id</view> -->
-    <button bindtap="get" class="btn" size="mini">获取上一步</button>
+    <button bindtap="get" class="btn" size="default">获取上一步</button>
+    <button bindtap="ai" class="btn" size="default">点击智能出牌</button>
   </view>
 </view>
 </view>
